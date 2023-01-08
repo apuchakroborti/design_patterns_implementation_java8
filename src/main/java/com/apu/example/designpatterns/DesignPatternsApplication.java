@@ -16,7 +16,7 @@ public class DesignPatternsApplication {
 //        new PrototypePatternMainClass().testPrototypePattern();
 //        new BuilderTestMain().testBuilderPattern();
 //        new ProxyTestClientMain().testProxy();
-        new FlyweightTestAnimalClient().testFlyweightDP();
+//        new FlyweightTestAnimalClient().testFlyweightDP();
         SpringApplication.run(DesignPatternsApplication.class, args);
 
     }

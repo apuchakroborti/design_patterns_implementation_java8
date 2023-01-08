@@ -23,4 +23,8 @@ public class SingletonTestMain {
         SingletonTestMain singletonTestMain2 = new SingletonTestMain();
         System.out.println("singletonTestMain2: "+singletonTestMain2);
     }
+
+    public static void main(String[] args) {
+        new SingletonTestMain().testSingleton();
+    }
 }
