@@ -2,7 +2,7 @@ package com.apu.example.designpatterns.structural.proxy;
 
 public class RealSubject implements Subject{
     @Override
-    public void method() {
-        System.out.println("Actual implementation");
+    public void request() {
+        System.out.println("RealSubject: Handling request");
     }
 }

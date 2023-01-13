@@ -15,20 +15,30 @@ The resizeByPercentage method is an example of a high-level operation (part of t
 
 By using the Bridge design pattern, you can change the drawing API used by a shape without having to modify the shape's code.
 For example, you could create a new drawing API called DrawingAPI3 and use it to draw circles as follows:
-*
-*
-*
-*
-* */
-public class CircleShape extends Shape {
+*/
+
+/*
+This would allow you to draw the circles using the DrawingAPI3 implementation without modifying the CircleShape class.
+
+In the example I provided, the draw method in the Shape abstract class is the "bridge" between the abstraction (Shape) and the implementation (DrawingAPI).
+The draw method is defined in the Shape class,
+but it delegates the actual drawing to the DrawingAPI object that is referenced by the drawingAPI field in the Shape class.
+This allows the Shape class to be independent of the concrete implementation of the DrawingAPI interface,
+and the DrawingAPI implementation can be changed without affecting the Shape class.
+*/
+
+public class CircleShapeTestMain extends Shape {
     private double x, y, radius;
 
-    public CircleShape(double x, double y, double radius, DrawingAPI drawingAPI) {
+    public CircleShapeTestMain(double x, double y, double radius, DrawingAPI drawingAPI) {
         super(drawingAPI);
-        this.x = x;  this.y = y;  this.radius = radius;
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
     }
 
     // low-level i.e. Implementation specific
+    //this is the bridge between abstraction (Shape) and the implementation (DrawingAPI)
     public void draw() {
         drawingAPI.drawCircle(x, y, radius);
     }
@@ -39,26 +49,14 @@ public class CircleShape extends Shape {
 
     public static void main(String[] args) {
         Shape[] shapes = new Shape[] {
-                new CircleShape(1, 2, 3, new DrawingAPI1()),
-                new CircleShape(5, 7, 11, new DrawingAPI2())
+                new CircleShapeTestMain(1, 2, 3, new DrawingAPI1()),
+                new CircleShapeTestMain(5, 7, 11, new DrawingAPI2())
         };
 
         for (Shape shape : shapes) {
             shape.resizeByPercentage(2.5);
             shape.draw();
         }
-
-
-        /*
-        * This would allow you to draw the circles using the DrawingAPI3 implementation without modifying the CircleShape class.
-        *
-        In the example I provided, the draw method in the Shape abstract class is the "bridge" between the abstraction (Shape) and the implementation (DrawingAPI).
-        The draw method is defined in the Shape class,
-        but it delegates the actual drawing to the DrawingAPI object that is referenced by the drawingAPI field in the Shape class.
-        This allows the Shape class to be independent of the concrete implementation of the DrawingAPI interface,
-        and the DrawingAPI implementation can be changed without affecting the Shape class.
-        *
-        * */
 
     }
 }

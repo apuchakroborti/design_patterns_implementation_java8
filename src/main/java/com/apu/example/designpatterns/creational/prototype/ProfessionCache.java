@@ -3,8 +3,7 @@ package com.apu.example.designpatterns.creational.prototype;
 import java.util.Hashtable;
 
 public class ProfessionCache {
-    private static Hashtable<Integer, Profession> professionHashtable =
-            new Hashtable<Integer, Profession>();
+    private static Hashtable<Integer, Profession> professionHashtable = new Hashtable<Integer, Profession>();
 
     public static Profession getCloneNewProfession(int id){
         Profession cachedProfessionInstance = professionHashtable.get(id);

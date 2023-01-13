@@ -1,10 +1,13 @@
 package com.apu.example.designpatterns.behavioral.chain_of_responsibility;
 
 /*
-* The Chain of Responsibility design pattern allows you to pass requests along a dynamic chain of processors until one of them handles the request.
-It can be used to implement a variety of solutions, including the creation of a support ticket system or an email system.
+* The Chain of Responsibility design pattern allows you to pass requests along a dynamic chain of processors
+* until one of them handles the request.
+
+  It can be used to implement a variety of solutions, including the creation of a support ticket system or an email system.
 * In this example, the Client class sends requests to a chain of RequestHandler objects.
 * The request is passed from one handler to the next until it is handled.
+*
 * Each RequestHandler object has a reference to the next handler in the chain, and the last handler has a null reference.
 * */
 

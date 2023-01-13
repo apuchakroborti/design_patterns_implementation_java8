@@ -37,6 +37,7 @@ public class MementoTestMain {
 
         originator.getStateFromMemento(caretaker.getMemento(0));
         System.out.println("First saved State: " + originator.getState());
+
         originator.getStateFromMemento(caretaker.getMemento(1));
         System.out.println("Second saved State: " + originator.getState());
 

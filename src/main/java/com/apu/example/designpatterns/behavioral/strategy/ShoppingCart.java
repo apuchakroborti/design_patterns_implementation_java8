@@ -2,11 +2,6 @@ package com.apu.example.designpatterns.behavioral.strategy;
 
 import java.util.ArrayList;
 
-/*
-*
-*
-*
-* */
 class ShoppingCart {
     //List of items
     ArrayList<Item> items;
@@ -19,6 +14,7 @@ class ShoppingCart {
     public void removeItem(Item item){
         this.items.remove(item);
     }
+
     public int calculateTotal(){
         int sum=0;
         for(Item item : items){
@@ -26,6 +22,7 @@ class ShoppingCart {
         }
         return sum;
     }
+
     public void pay(PaymentStrategy paymentMethod){
         int amount = calculateTotal();
         paymentMethod.pay(amount);
